@@ -1,17 +1,10 @@
-### hapi-shared-auth-cookie
+### hapi-auth-cookie
 
-[**hapi**](https://github.com/hapijs/hapi) Shared Session Cookie authentication plugin. The session is supposed to be created by some other services, like PHP.
+[**hapi**](https://github.com/hapijs/hapi) Cookie authentication plugin
 
-# Rationale
+[![Build Status](https://secure.travis-ci.org/hapijs/hapi-auth-cookie.png)](http://travis-ci.org/hapijs/hapi-auth-cookie)
 
-This project is originally forked from [hapi-auth-cookie](https://github.com/hapijs/hapi-auth-cookie). I was using hapi as a smart proxy (with `h2o2`) in a project where majority of the stack was written in PHP. The goal was to rewrite the entire application in node, one endpoint at a time. The php application created session and maintains it, and I needed to share that session with the hapi application as is.
-
-The `hapi-auth-cookie` plugin was not meeting the purpose. It was designed to create its own session cookie, encrypt it with [Iron](https://github.com/hueniverse/iron) and there was no way of not doing that [without creating a fork](https://github.com/hapijs/hapi-auth-cookie/issues/100#issuecomment-167844104).
-
-So, to be clear, this plugin is NOT supposed to
-- Create session, it will be dealt elsewhere.
-- Encrypt or modify session cookie in anyway. It should just check if a given cookie is present and validate rest of the things using `validateFunc`.
-
+Lead Maintainer: [James Weston](https://github.com/jaw187)
 
 Cookie authentication provides a simple cookie-based session management. The user has to be
 authenticated via other means, typically a web form, and upon successful authentication,
@@ -203,5 +196,3 @@ server.register(require('../'), (err) => {
     });
 });
 ```
-
-The original README can be found [here](https://github.com/mugli/hapi-shared-auth-cookie/blob/master/README_ORIGINAL.md).

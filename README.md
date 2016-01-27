@@ -10,7 +10,7 @@ The `hapi-auth-cookie` plugin was not meeting the purpose. It was designed to cr
 
 So, to be clear, this plugin is NOT supposed to
 - Create session/cookie, it will be dealt elsewhere.
-- Encrypt or modify session cookie in anyway. It should just check if a given cookie is present and validate rest of the things using `validateFunc`.
+- Encrypt or modify session cookie in anyway. It should just check if a given cookie is present and validate rest of the things using `validateFunc`. The only exception is `keepAlive`. If set, it'll keep refreshing the cookie with its original ttl.
 - Clear invalid cookie. The operations of this plugin should be readonly.
 
 

@@ -1,7 +1,7 @@
 {
   "name": "hapi-shared-auth-cookie",
   "description": "Shared Session Cookie authentication plugin",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "repository": "git://github.com/mugli/hapi-shared-auth-cookie",
   "main": "lib/index.js",
   "keywords": [
